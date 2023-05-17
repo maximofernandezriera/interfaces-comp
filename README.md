@@ -1,3 +1,3 @@
-# Teoría y práctica de los INTERFACES COMPARABLE Y COMPARATOR. 
+# ¿Qué son los interfaces comparable y comparator?
 
 ## Aplicando lo visto durante el trimestre.
