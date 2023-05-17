@@ -4,7 +4,9 @@
 
 ## Introducción
 
-Muchas operaciones entre objetos nos obligan a compararlos: buscar, y también ordenar. Podríamos haberle dedicado una unidad didáctica entera a los métodos de ordenaciones pero a estas alturas del curso, podemos aparcar a los tipos primitivos y hacer uso de algunas clclases ya mplementan su orden (natural, lexicográfico), para nuestras clases tenemos que especificar el orden con el que las vamos a tratar.
+Muchas operaciones entre objetos nos obligan a compararlos: buscar, y también ordenar. 
+
+Podríamos haberle dedicado una unidad didáctica entera a los métodos de ordenaciones pero a estas alturas del curso, podemos aparcar a los tipos primitivos y hacer uso de algunas clases ya implementan su orden (natural, lexicográfico), para nuestras clases tenemos que especificar el orden con el que las vamos a tratar.
 
 ---
 
