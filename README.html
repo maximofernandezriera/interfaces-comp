@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">## Introducción
+
+Muchas operaciones entre objetos nos obligan a compararlos: buscar, y también ordenar. Podríamos haberle dedicado una unidad didáctica entera a los métodos de ordenaciones pero a estas alturas del curso, podemos aparcar a los tipos primitivos y hacer uso de algunas clclases ya mplementan su orden (natural, lexicográfico), para nuestras clases tenemos que especificar el orden con el que las vamos a tratar.
+</script></section><section  data-markdown><script type="text/template">
+## Comparable
+
+Comparable es una **interfaz** propuesta por la API de Java, y su definición es sencilla:
+
+        public interface Compararable<T> {
+            public int compareTo(T o);
+        }
+</script></section><section  data-markdown><script type="text/template">
+Recibe un objeto del mismo tipo que la clase que lo implementa. El valor de retorno del método compareTo será:
+
+0 si ambos objetos son iguales,
+un valor negativo si el objeto es menor,
+y uno positivo si es mayor.
+Nos sirve para indicar el orden principal de una clase.
+</script></section><section  data-markdown><script type="text/template">
+## Comparator
+
+Comparator también es un interfaz propuesto por Java, y su definición también es sencilla:
+
+        public interface Comparator<T> {
+            public int compare(T o1, T o2);
+        }
+</script></section><section  data-markdown><script type="text/template">
+Recibe dos argumentos, y su valor de retorno es análogo al de comparable.
+
+Comparator nos servirá para indicar un orden diferente al orden natural definido con Comparable (no es necesario haber definido un orden con Comparable para poder utilizar Comparator, aunque sí es recomendable).
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
